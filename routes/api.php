@@ -25,4 +25,3 @@ Route::post('/type', [TypesController::class, 'store']);
 Route::get('/type/{id}', [TypesController::class, 'show']);
 Route::put('/type/{id}', [TypesController::class, 'update']);
 Route::delete('/type/{id}', [TypesController::class, 'destroy']);
-
