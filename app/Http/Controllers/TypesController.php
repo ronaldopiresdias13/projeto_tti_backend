@@ -61,6 +61,7 @@ class TypesController extends Controller
      */
     public function destroy($id)
     {
+        
         $type = Type::find($id);
         return $type->delete();
     }
