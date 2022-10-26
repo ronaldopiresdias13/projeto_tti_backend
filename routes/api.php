@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,3 +30,10 @@ Route::post("category ",[CategoryController::class, "store"]);
 Route::get("category/{category}",[CategoryController::class, "show"]);
 Route::put("category/{category}",[CategoryController::class, "update"]);
 Route::delete("category/{category}",[CategoryController::class, "destroy"]);
+
+Route::Get("user",[UserController::class, "index"]);
+Route::post("user",[UserController::class, "store"]);
+Route::get("user/{user}",[UserController::class, "show"]);
+Route::put("user/{user}",[UserController::class, "update"]);
+Route::delete("user/{user}",[UserController::class, "destroy"]);
+Route::post("users",[UserController::class, "verifications"]);
