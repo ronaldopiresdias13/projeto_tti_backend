@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TypesController;
-
+use App\Http\Controllers\Hours_salonsController;
 
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
@@ -22,11 +22,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/hours_salon', [Hours_salonsController::class, 'index']);
+Route::post('/hours_salon', [Hours_salonsController::class, 'store']);
+Route::get('/hours_salon/{id}', [Hours_salonsController::class, 'show']);
+Route::put('/hours_salon/{id}', [Hours_salonsController::class, 'update']);
+Route::delete('/hours_salon/{id}', [Hours_salonsController::class, 'destroy']);
+
 Route::get('/type', [TypesController::class, 'index']);
 Route::post('/type', [TypesController::class, 'store']);
 Route::get('/type/{id}', [TypesController::class, 'show']);
 Route::put('/type/{id}', [TypesController::class, 'update']);
 Route::delete('/type/{id}', [TypesController::class, 'destroy']);
+
 Route::get("service",[ServiceController::class, "index"]);
 Route::post("service ",[ServiceController::class, "store"]);
 Route::get("service/{service}",[ServiceController::class, "show"]);
