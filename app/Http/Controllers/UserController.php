@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Controllers\Hash;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
@@ -50,12 +50,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,User $user)
+    public function updates(Request $request,User $user)
     {
         return User::update([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password
+            'password' => Hash::make($request->password)
         ]);
     }
     public function edit(Request $request,User $user)
@@ -63,7 +63,7 @@ class UserController extends Controller
         return User::edit([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password
+            'password' => Hash::make($request->password)
         ]);
     }
     /**

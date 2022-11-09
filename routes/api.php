@@ -34,6 +34,6 @@ Route::delete("category/{category}",[CategoryController::class, "destroy"]);
 Route::Get("user",[UserController::class, "index"]);
 Route::post("user",[UserController::class, "store"]);
 Route::get("user/{user}",[UserController::class, "show"]);
-Route::put("user/{user}",[UserController::class, "update"]);
+Route::put("user/{user}",[UserController::class, "updates"]);
 Route::delete("user/{user}",[UserController::class, "destroy"]);
 Route::post("users",[UserController::class, "verifications"]);
