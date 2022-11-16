@@ -5,8 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TypesController;
 use App\Http\Controllers\Hours_salonsController;
 
+
+use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CityController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -52,6 +57,7 @@ Route::get("user/{user}",[UserController::class, "show"]);
 Route::put("user/{user}",[UserController::class, "updates"]);
 Route::delete("user/{user}",[UserController::class, "destroy"]);
 Route::post("users",[UserController::class, "verifications"]);
+
 Route::get("Citys", [CityController::class,"index"]);
 Route::post("city", [CityController::class,"store"]);
 Route::get("city/{id}", [CityController::class,"show"]);
@@ -63,3 +69,9 @@ Route::post("state", [StateController::class,"store"]);
 Route::get("state/{id}", [StateController::class,"show"]);
 Route::put("state/{id}", [StateController::class,"update"]);
 Route::delete("state/{id}", [StateController::class,"destroy"]);
+
+Route::get("People", [PeopleController::class,"index"]);
+Route::post("People", [PeopleController::class,"store"]);
+Route::get("People/{id}", [PeopleController::class,"show"]);
+Route::put("People/{id}", [PeopleController::class,"update"]);
+Route::delete("People/{id}", [PeopleController::class,"destroy"]);
